@@ -8,3 +8,6 @@ Added a simple Counter.sol with increment, decrement and getCount functions. Goo
 feat: emit events on Counter increment and decrement
 
 Added Incremented and Decremented events so changes can be easily tracked on Base block explorers.
+refactor: clean up Counter contract code
+
+Improved variable naming and added NatSpec comments for better readability. Preparing the contract for public use on Base.
