@@ -2,3 +2,6 @@ Base offers low fees, fast finality and deep integration with Coinbase. Starting
 chore: create initial folder structure for Base experiments
 
 Added folders for contracts/, scripts/ and docs/. Preparing the repo to start writing and deploying simple Solidity contracts on Base Sepolia and Mainnet.
+feat: implement Counter contract
+
+Added a simple Counter.sol with increment, decrement and getCount functions. Good starting point for testing deployments on Base.
