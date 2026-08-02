@@ -11,3 +11,6 @@ Added Incremented and Decremented events so changes can be easily tracked on Bas
 refactor: clean up Counter contract code
 
 Improved variable naming and added NatSpec comments for better readability. Preparing the contract for public use on Base.
+feat: add max count limit to Counter
+
+Added a maximum value check to prevent the counter from exceeding a defined limit. Improves robustness for Base deployments.
