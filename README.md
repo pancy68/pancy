@@ -5,3 +5,6 @@ Added folders for contracts/, scripts/ and docs/. Preparing the repo to start wr
 feat: implement Counter contract
 
 Added a simple Counter.sol with increment, decrement and getCount functions. Good starting point for testing deployments on Base.
+feat: emit events on Counter increment and decrement
+
+Added Incremented and Decremented events so changes can be easily tracked on Base block explorers.
