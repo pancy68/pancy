@@ -17,3 +17,6 @@ Added a maximum value check to prevent the counter from exceeding a defined limi
 feat: allow setting custom step size in Counter
 
 Added the ability to increment or decrement by a custom amount instead of just 1. Makes the contract more flexible on Base.
+feat: add historical count tracking to Counter
+
+Stored previous counter values so users can query past states. Useful for analytics and testing on Base.
