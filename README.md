@@ -114,3 +114,15 @@ contract SimpleTodo {
         completed = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TimestampLocker {
+    uint256 public value;
+    uint256 public lockedAt;
+
+    function lock(uint256 _value) external {
+        value = _value;
+        lockedAt = block.timestamp;
+    }
+}
