@@ -98,3 +98,19 @@ contract BasicCounter {
         count = 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleTodo {
+    string public task;
+    bool public completed;
+
+    function setTask(string calldata _task) external {
+        task = _task;
+        completed = false;
+    }
+
+    function complete() external {
+        completed = true;
+    }
+}
