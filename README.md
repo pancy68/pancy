@@ -29,3 +29,52 @@ Added a toggle so the owner can decide if public increments are allowed. More fl
 feat: add event for ownership transfer in Counter
 
 Emitted an OwnershipTransferred event whenever the owner changes. Improves transparency on Base explorers.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AdvancedCounter {
+    address public owner;
+    int256 public count;
+    int256 public maxCount;
+    int256 public step = 1;
+    bool public stopped;
+
+    event CountChanged(int256 newCount, address indexed caller);
+    event EmergencyStop(address indexed caller);
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not owner");
+        _;
+    }
+
+    modifier notStopped() {
+        require(!stopped, "Contract stopped");
+        _;
+    }
+
+    constructor(int256 _maxCount) {
+        owner = msg.sender;
+        maxCount = _maxCount;
+    }
+
+    function increment() external notStopped {
+        require(count + step <= maxCount, "Max reached");
+        count += step;
+        emit CountChanged(count, msg.sender);
+    }
+
+    function decrement() external notStopped {
+        count -= step;
+        emit CountChanged(count, msg.sender);
+    }
+
+    function setStep(int256 _step) external onlyOwner {
+        require(_step > 0, "Step must be positive");
+        step = _step;
+    }
+
+    function emergencyStop() external onlyOwner {
+        stopped = true;
+        emit EmergencyStop(msg.sender);
+    }
+}
