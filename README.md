@@ -20,3 +20,6 @@ Added the ability to increment or decrement by a custom amount instead of just 1
 feat: add historical count tracking to Counter
 
 Stored previous counter values so users can query past states. Useful for analytics and testing on Base.
+feat: implement emergency stop in Counter
+
+Added an emergencyStop function that freezes all operations. Extra safety layer for contracts deployed on Base.
