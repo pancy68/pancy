@@ -14,3 +14,6 @@ Improved variable naming and added NatSpec comments for better readability. Prep
 feat: add max count limit to Counter
 
 Added a maximum value check to prevent the counter from exceeding a defined limit. Improves robustness for Base deployments.
+feat: allow setting custom step size in Counter
+
+Added the ability to increment or decrement by a custom amount instead of just 1. Makes the contract more flexible on Base.
