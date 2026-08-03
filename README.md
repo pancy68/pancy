@@ -23,3 +23,6 @@ Stored previous counter values so users can query past states. Useful for analyt
 feat: implement emergency stop in Counter
 
 Added an emergencyStop function that freezes all operations. Extra safety layer for contracts deployed on Base.
+feat: allow Counter to be incremented by anyone or only owner
+
+Added a toggle so the owner can decide if public increments are allowed. More flexible control for Base deployments.
