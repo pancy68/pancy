@@ -26,3 +26,6 @@ Added an emergencyStop function that freezes all operations. Extra safety layer 
 feat: allow Counter to be incremented by anyone or only owner
 
 Added a toggle so the owner can decide if public increments are allowed. More flexible control for Base deployments.
+feat: add event for ownership transfer in Counter
+
+Emitted an OwnershipTransferred event whenever the owner changes. Improves transparency on Base explorers.
