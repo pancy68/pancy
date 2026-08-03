@@ -78,3 +78,23 @@ contract AdvancedCounter {
         emit EmergencyStop(msg.sender);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BasicCounter {
+    address public owner;
+    uint256 public count;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function increment() external {
+        count++;
+    }
+
+    function reset() external {
+        require(msg.sender == owner, "Not owner");
+        count = 0;
+    }
+}
