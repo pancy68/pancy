@@ -126,3 +126,14 @@ contract TimestampLocker {
         lockedAt = block.timestamp;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MinNumber {
+    uint256 public number;
+
+    function setIfHigher(uint256 _number) external {
+        require(_number > number, "Too low");
+        number = _number;
+    }
+}
