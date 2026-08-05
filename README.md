@@ -154,3 +154,21 @@ contract TipJar {
         payable(owner).transfer(address(this).balance);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Lockbox {
+    address public owner;
+    bool public unlocked;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function unlock() external {
+        require(msg.sender == owner, "Not owner");
+        unlocked = true;
+    }
+
+    receive() external payable {}
+}
