@@ -242,3 +242,13 @@ contract StringLength {
         return bytes(text).length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract LastCaller {
+    address public last;
+
+    function update() external {
+        last = msg.sender;
+    }
+}
