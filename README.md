@@ -184,3 +184,13 @@ contract DepositTracker {
         lastAmount = msg.value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract LuckyNumber {
+    uint256 public number;
+
+    function choose(uint256 _number) external {
+        number = _number;
+    }
+}
