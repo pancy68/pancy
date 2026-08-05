@@ -266,3 +266,13 @@ contract ActiveFlag {
         active = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PublicCounter {
+    uint256 public count;
+
+    function increment() external {
+        count += 1;
+    }
+}
