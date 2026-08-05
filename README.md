@@ -204,3 +204,17 @@ contract TimeLogger {
         lastTime = block.timestamp;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NumberList {
+    uint256[] public numbers;
+
+    function add(uint256 num) external {
+        numbers.push(num);
+    }
+
+    function count() external view returns (uint256) {
+        return numbers.length;
+    }
+}
