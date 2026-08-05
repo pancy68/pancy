@@ -172,3 +172,15 @@ contract Lockbox {
 
     receive() external payable {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DepositTracker {
+    address public lastDepositor;
+    uint256 public lastAmount;
+
+    receive() external payable {
+        lastDepositor = msg.sender;
+        lastAmount = msg.value;
+    }
+}
