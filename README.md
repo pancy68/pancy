@@ -252,3 +252,17 @@ contract LastCaller {
         last = msg.sender;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ActiveFlag {
+    bool public active = true;
+
+    function deactivate() external {
+        active = false;
+    }
+
+    function activate() external {
+        active = true;
+    }
+}
