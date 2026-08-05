@@ -194,3 +194,13 @@ contract LuckyNumber {
         number = _number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TimeLogger {
+    uint256 public lastTime;
+
+    function log() external {
+        lastTime = block.timestamp;
+    }
+}
