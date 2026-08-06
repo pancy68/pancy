@@ -276,3 +276,11 @@ contract PublicCounter {
         count += 1;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EmptyChecker {
+    function isEmpty(string calldata text) external pure returns (bool) {
+        return bytes(text).length == 0;
+    }
+}
