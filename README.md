@@ -284,3 +284,13 @@ contract EmptyChecker {
         return bytes(text).length == 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Presence {
+    mapping(address => bool) public hasInteracted;
+
+    function interact() external {
+        hasInteracted[msg.sender] = true;
+    }
+}
