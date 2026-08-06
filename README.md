@@ -312,3 +312,11 @@ contract MinOfTwo {
         return a < b ? a : b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ChainId {
+    function getChainId() external view returns (uint256) {
+        return block.chainid;
+    }
+}
