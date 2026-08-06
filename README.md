@@ -320,3 +320,13 @@ contract ChainId {
         return block.chainid;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BlockSaver {
+    uint256 public savedBlock;
+
+    function save() external {
+        savedBlock = block.number;
+    }
+}
