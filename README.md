@@ -385,3 +385,18 @@ contract OnceLocker {
         locked = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NumberCloner {
+    uint256 public original;
+    uint256 public copy;
+
+    function set(uint256 value) external {
+        original = value;
+    }
+
+    function clone() external {
+        copy = original;
+    }
+}
