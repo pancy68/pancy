@@ -294,3 +294,13 @@ contract Presence {
         hasInteracted[msg.sender] = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract InteractionLogger {
+    uint256 public lastInteraction;
+
+    function interact() external {
+        lastInteraction = block.timestamp;
+    }
+}
