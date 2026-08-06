@@ -330,3 +330,11 @@ contract BlockSaver {
         savedBlock = block.number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TimeDiff {
+    function diff(uint256 a, uint256 b) external pure returns (uint256) {
+        return a > b ? a - b : b - a;
+    }
+}
