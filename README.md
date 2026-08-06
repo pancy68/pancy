@@ -420,3 +420,14 @@ contract ValueToggler {
         value = value == 0 ? 1 : 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Decreaser {
+    uint256 public count = 10;
+
+    function decrement() external {
+        require(count > 0, "Already zero");
+        count--;
+    }
+}
