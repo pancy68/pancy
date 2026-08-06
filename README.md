@@ -354,3 +354,18 @@ contract IsContract {
         return addr.code.length > 0;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StepCounter {
+    uint256 public count;
+    uint256 public step = 1;
+
+    function setStep(uint256 _step) external {
+        step = _step;
+    }
+
+    function increment() external {
+        count += step;
+    }
+}
