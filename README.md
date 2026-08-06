@@ -346,3 +346,11 @@ contract LessOrEqual {
         return a <= b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract IsContract {
+    function check(address addr) external view returns (bool) {
+        return addr.code.length > 0;
+    }
+}
