@@ -372,3 +372,16 @@ contract StepCounter {
 feat: basic Value swapper
 
 Swaps two stored numbers.
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract OnceLocker {
+    uint256 public value;
+    bool private locked;
+
+    function lockValue(uint256 _value) external {
+        require(!locked, "Already locked");
+        value = _value;
+        locked = true;
+    }
+}
