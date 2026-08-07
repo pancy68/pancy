@@ -484,3 +484,18 @@ contract Renounceable {
         owner = address(0);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DualCounter {
+    uint256 public countA;
+    uint256 public countB;
+
+    function incA() external {
+        countA++;
+    }
+
+    function incB() external {
+        countB++;
+    }
+}
