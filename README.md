@@ -551,3 +551,13 @@ contract CustomError {
         if (value == 0) revert InvalidValue();
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MappingExample {
+    mapping(address => uint256) public balances;
+
+    function set(uint256 amount) external {
+        balances[msg.sender] = amount;
+    }
+}
