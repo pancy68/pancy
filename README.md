@@ -517,3 +517,11 @@ contract LeftShift {
         return value << positions;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract UintToBytes32 {
+    function convert(uint256 value) external pure returns (bytes32) {
+        return bytes32(value);
+    }
+}
