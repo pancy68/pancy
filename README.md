@@ -509,3 +509,11 @@ contract LastBlockHash {
         lastHash = blockhash(block.number - 1);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract LeftShift {
+    function shift(uint256 value, uint256 positions) external pure returns (uint256) {
+        return value << positions;
+    }
+}
