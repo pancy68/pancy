@@ -469,3 +469,18 @@ contract ViewCounter {
         return count;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Renounceable {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function renounce() external {
+        require(msg.sender == owner, "Not owner");
+        owner = address(0);
+    }
+}
