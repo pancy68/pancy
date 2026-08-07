@@ -455,3 +455,17 @@ contract SimpleCounter {
         return count;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ViewCounter {
+    uint256 private count;
+
+    function increment() external {
+        count++;
+    }
+
+    function current() external view returns (uint256) {
+        return count;
+    }
+}
