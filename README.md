@@ -533,3 +533,11 @@ contract NumberHash {
         return keccak256(abi.encodePacked(number));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BlockNumberAdd {
+    function add(uint256 number) external view returns (uint256) {
+        return block.number + number;
+    }
+}
