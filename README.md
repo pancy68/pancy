@@ -541,3 +541,13 @@ contract BlockNumberAdd {
         return block.number + number;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CustomError {
+    error InvalidValue();
+
+    function check(uint256 value) external pure {
+        if (value == 0) revert InvalidValue();
+    }
+}
