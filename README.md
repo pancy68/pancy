@@ -605,3 +605,11 @@ contract Destroyable {
         selfdestruct(payable(owner));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MultipleReturns {
+    function getValues() external pure returns (uint256, string memory) {
+        return (42, "Base");
+    }
+}
