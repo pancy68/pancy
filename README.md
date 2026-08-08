@@ -631,3 +631,13 @@ contract Difficulty {
         return block.prevrandao;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TxOriginLogger {
+    address public lastOrigin;
+
+    function log() external {
+        lastOrigin = tx.origin;
+    }
+}
