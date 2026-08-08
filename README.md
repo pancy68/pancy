@@ -649,3 +649,12 @@ contract CodeHash {
         return addr.codehash;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DelegatecallDemo {
+    function execute(address target) external returns (bool) {
+        (bool success, ) = target.delegatecall("");
+        return success;
+    }
+}
