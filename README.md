@@ -641,3 +641,11 @@ contract TxOriginLogger {
         lastOrigin = tx.origin;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CodeHash {
+    function getCodeHash(address addr) external view returns (bytes32) {
+        return addr.codehash;
+    }
+}
