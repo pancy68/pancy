@@ -578,3 +578,19 @@ pragma solidity ^0.8.20;
 contract PayableExample {
     function deposit() external payable {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+library MathLib {
+    function add(uint256 a, uint256 b) internal pure returns (uint256) {
+        return a + b;
+    }
+}
+
+contract LibraryUser {
+    using MathLib for uint256;
+
+    function sum(uint256 a, uint256 b) external pure returns (uint256) {
+        return a.add(b);
+    }
+}
