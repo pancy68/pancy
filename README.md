@@ -623,3 +623,11 @@ contract ErrorWithData {
         revert InsufficientBalance(0, amount);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Difficulty {
+    function getDifficulty() external view returns (uint256) {
+        return block.prevrandao;
+    }
+}
