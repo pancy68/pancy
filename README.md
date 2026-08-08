@@ -572,3 +572,9 @@ contract FixedArray {
         numbers[index] = value;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PayableExample {
+    function deposit() external payable {}
+}
