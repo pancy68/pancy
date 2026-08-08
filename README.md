@@ -561,3 +561,14 @@ contract MappingExample {
         balances[msg.sender] = amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract FixedArray {
+    uint256[3] public numbers;
+
+    function set(uint256 index, uint256 value) external {
+        require(index < 3, "Index out of bounds");
+        numbers[index] = value;
+    }
+}
