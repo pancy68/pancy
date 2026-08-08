@@ -613,3 +613,13 @@ contract MultipleReturns {
         return (42, "Base");
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ErrorWithData {
+    error InsufficientBalance(uint256 available, uint256 required);
+
+    function withdraw(uint256 amount) external pure {
+        revert InsufficientBalance(0, amount);
+    }
+}
