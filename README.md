@@ -594,3 +594,14 @@ contract LibraryUser {
         return a.add(b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Destroyable {
+    address public owner = msg.sender;
+
+    function destroy() external {
+        require(msg.sender == owner, "Not owner");
+        selfdestruct(payable(owner));
+    }
+}
