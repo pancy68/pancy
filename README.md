@@ -658,3 +658,11 @@ contract DelegatecallDemo {
         return success;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StringConcat {
+    function concat(string calldata a, string calldata b) external pure returns (string memory) {
+        return string.concat(a, b);
+    }
+}
