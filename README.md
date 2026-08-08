@@ -666,3 +666,17 @@ contract StringConcat {
         return string.concat(a, b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StorageArray {
+    uint256[] public data;
+
+    function push(uint256 value) external {
+        data.push(value);
+    }
+
+    function pop() external {
+        data.pop();
+    }
+}
