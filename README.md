@@ -738,3 +738,13 @@ contract EarlyReturn {
         if (value == 0) return;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ConstructorVis {
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+}
