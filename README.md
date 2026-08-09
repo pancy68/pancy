@@ -772,3 +772,13 @@ contract LibraryCall {
         return MathHelper.double(x);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StringEvent {
+    event Message(string text);
+
+    function send(string calldata text) external {
+        emit Message(text);
+    }
+}
