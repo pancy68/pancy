@@ -722,3 +722,11 @@ contract NestedLoop {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Globals {
+    function getInfo() external view returns (address, uint256, uint256) {
+        return (msg.sender, block.timestamp, block.number);
+    }
+}
