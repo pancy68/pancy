@@ -815,3 +815,13 @@ contract AssemblyReturn {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TimestampAssembly {
+    function getTimestamp() external view returns (uint256 ts) {
+        assembly {
+            ts := timestamp()
+        }
+    }
+}
