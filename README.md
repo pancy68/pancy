@@ -792,3 +792,15 @@ contract CustomErrorParams {
         revert Values(a, b);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SlotReader {
+    uint256 public value = 123;
+
+    function readSlot0() external view returns (uint256 result) {
+        assembly {
+            result := sload(0)
+        }
+    }
+}
