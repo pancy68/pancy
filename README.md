@@ -710,3 +710,15 @@ contract WhileLoop {
         return n;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NestedLoop {
+    function multiply(uint256 n) external pure returns (uint256 result) {
+        for (uint256 i = 1; i <= n; i++) {
+            for (uint256 j = 1; j <= n; j++) {
+                result += i * j;
+            }
+        }
+    }
+}
