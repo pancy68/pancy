@@ -782,3 +782,13 @@ contract StringEvent {
         emit Message(text);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract CustomErrorParams {
+    error Values(uint256 a, uint256 b);
+
+    function fail(uint256 a, uint256 b) external pure {
+        revert Values(a, b);
+    }
+}
