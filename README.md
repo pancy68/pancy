@@ -699,3 +699,14 @@ contract Destructure {
         sum = a + b;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract WhileLoop {
+    function countdown(uint256 n) external pure returns (uint256) {
+        while (n > 0) {
+            n--;
+        }
+        return n;
+    }
+}
