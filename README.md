@@ -758,3 +758,17 @@ contract X {
 contract Y is X {}
 contract Z is X {}
 contract W is Y, Z {}
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+library MathHelper {
+    function double(uint256 x) internal pure returns (uint256) {
+        return x * 2;
+    }
+}
+
+contract LibraryCall {
+    function getDouble(uint256 x) external pure returns (uint256) {
+        return MathHelper.double(x);
+    }
+}
