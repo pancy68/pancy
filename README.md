@@ -686,3 +686,16 @@ pragma solidity ^0.8.20;
 contract ReceiveOnly {
     receive() external payable {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Destructure {
+    function getPair() public pure returns (uint256, uint256) {
+        return (10, 20);
+    }
+
+    function use() external pure returns (uint256 sum) {
+        (uint256 a, uint256 b) = getPair();
+        sum = a + b;
+    }
+}
