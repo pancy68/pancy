@@ -748,3 +748,13 @@ contract ConstructorVis {
         owner = msg.sender;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract X {
+    function x() public pure returns (string memory) { return "X"; }
+}
+
+contract Y is X {}
+contract Z is X {}
+contract W is Y, Z {}
