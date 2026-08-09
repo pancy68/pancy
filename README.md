@@ -730,3 +730,11 @@ contract Globals {
         return (msg.sender, block.timestamp, block.number);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EarlyReturn {
+    function check(uint256 value) external pure {
+        if (value == 0) return;
+    }
+}
