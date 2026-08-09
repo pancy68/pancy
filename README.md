@@ -804,3 +804,14 @@ contract SlotReader {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract AssemblyReturn {
+    function get() external pure returns (uint256) {
+        assembly {
+            mstore(0x00, 42)
+            return(0x00, 0x20)
+        }
+    }
+}
