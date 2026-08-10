@@ -897,3 +897,19 @@ contract MultiPayable {
     function pay2() external payable {}
     function pay3() external payable {}
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PausableCounter {
+    uint256 public count;
+    bool public paused;
+
+    function increment() external {
+        require(!paused, "Paused");
+        count++;
+    }
+
+    function pause() external {
+        paused = true;
+    }
+}
