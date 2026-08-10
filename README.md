@@ -825,3 +825,11 @@ contract TimestampAssembly {
         }
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract StringLen {
+    function len(string calldata text) external pure returns (uint256) {
+        return bytes(text).length;
+    }
+}
