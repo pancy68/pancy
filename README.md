@@ -952,3 +952,18 @@ contract SimpleMultiSig {
         return approved1 && approved2;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract Quorum {
+    uint256 public votes;
+    uint256 public quorum = 10;
+
+    function vote() external {
+        votes++;
+    }
+
+    function quorumReached() external view returns (bool) {
+        return votes >= quorum;
+    }
+}
