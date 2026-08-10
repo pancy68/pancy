@@ -833,3 +833,11 @@ contract StringLen {
         return bytes(text).length;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EmptyBytes {
+    function isEmpty(bytes calldata data) external pure returns (bool) {
+        return data.length == 0;
+    }
+}
