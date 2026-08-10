@@ -929,3 +929,26 @@ contract BlacklistPattern {
         return blacklist[user];
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract SimpleMultiSig {
+    address public owner1;
+    address public owner2;
+    bool public approved1;
+    bool public approved2;
+
+    constructor(address _owner2) {
+        owner1 = msg.sender;
+        owner2 = _owner2;
+    }
+
+    function approve() external {
+        if (msg.sender == owner1) approved1 = true;
+        if (msg.sender == owner2) approved2 = true;
+    }
+
+    function isApproved() external view returns (bool) {
+        return approved1 && approved2;
+    }
+}
