@@ -869,3 +869,13 @@ contract StructMapping {
         users[msg.sender] = User(balance, active);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract FixedBytes {
+    bytes32 public data;
+
+    function set(bytes32 _data) external {
+        data = _data;
+    }
+}
