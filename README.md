@@ -977,3 +977,13 @@ contract BurnCounter {
         totalBurned += amount;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract ApprovalEvent {
+    event Approval(address indexed owner, address indexed spender, uint256 value);
+
+    function fakeApprove(address spender, uint256 value) external {
+        emit Approval(msg.sender, spender, value);
+    }
+}
