@@ -913,3 +913,19 @@ contract PausableCounter {
         paused = true;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BlacklistPattern {
+    mapping(address => bool) public blacklist;
+    address public owner = msg.sender;
+
+    function ban(address user) external {
+        require(msg.sender == owner, "Not owner");
+        blacklist[user] = true;
+    }
+
+    function isBanned(address user) external view returns (bool) {
+        return blacklist[user];
+    }
+}
