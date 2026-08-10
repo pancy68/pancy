@@ -967,3 +967,13 @@ contract Quorum {
         return votes >= quorum;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract BurnCounter {
+    uint256 public totalBurned;
+
+    function burn(uint256 amount) external {
+        totalBurned += amount;
+    }
+}
