@@ -889,3 +889,11 @@ contract ReceiveEvent {
         emit Received(msg.sender, msg.value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract MultiPayable {
+    function pay1() external payable {}
+    function pay2() external payable {}
+    function pay3() external payable {}
+}
