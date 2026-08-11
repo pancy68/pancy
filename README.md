@@ -1013,3 +1013,11 @@ contract TripleHash {
         return keccak256(abi.encodePacked(a, b, c));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract DomainStructHash {
+    function hash(bytes32 domain, bytes32 structHash) external pure returns (bytes32) {
+        return keccak256(abi.encodePacked("\x19\x01", domain, structHash));
+    }
+}
