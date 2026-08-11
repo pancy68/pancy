@@ -987,3 +987,11 @@ contract ApprovalEvent {
         emit Approval(msg.sender, spender, value);
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract EIP712Style {
+    function hashData(address user, uint256 amount) external pure returns (bytes32) {
+        return keccak256(abi.encode(user, amount));
+    }
+}
