@@ -995,3 +995,13 @@ contract EIP712Style {
         return keccak256(abi.encode(user, amount));
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract NonceDeadline {
+    mapping(address => uint256) public nonces;
+
+    function check(uint256 nonce, uint256 deadline) external view returns (bool) {
+        return nonce == nonces[msg.sender] && block.timestamp <= deadline;
+    }
+}
