@@ -1037,3 +1037,13 @@ contract PseudoRandom {
         return uint256(keccak256(abi.encodePacked(block.timestamp, msg.sender))) % max;
     }
 }
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract PrizePool {
+    uint256 public pool;
+
+    function add() external payable {
+        pool += msg.value;
+    }
+}
